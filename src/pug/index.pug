@@ -1,0 +1,59 @@
+extends templates/_default
+
+block head
+    title Home
+
+block header
+    +header
+
+block main
+    .container.container_flex-column
+        .row
+            .col-6.col-sm-4.mb-1.order-sm-1
+                +block('Наши сотрудники').block_muted100
+            .col-6.col-sm-4.mb-1.order-sm-2
+                +block('Просветляет понимающий тест').block_muted100
+            .col-12.col-sm-8.mb-1.order-sm-4
+                +block('Конформизм').block_muted100
+            .col-6.col-sm-4.mb-1.order-sm-5
+                +block('Интроекция').block_info
+            .col-6.col-sm-4.mb-1.order-sm-3
+                +block('Наши сотрудники').block_warning
+        .row.flex-nowrap.flex-block.order-sm-start
+            .col.mb-1.flex-block__left.col-sm-8
+                +block(false,'Гений непредвзято понимает под собой конфликт. Закон внешнего мира, очевидно, реально подчеркивает аксиоматичный здравый смысл. Культ джайнизма включает в себя поклонение Махавире и другим тиртханкарам, поэтому закон исключённого третьего индуцирует изоморфный ротор.').block_muted300.flex-block__big
+            .col.mb-1.flex-block__right.col-sm-4
+                .row
+                    .col-12.flex-block__mb
+                        +block('Чувство однократно').block_muted300.block_small.flex-block__small
+                    .col-12
+                        +block('Морено').block_muted300.block_small.flex-block__small
+        .row.flex-nowrap.flex-block.d-none.d-sm-flex       
+            .col.mb-1.flex-block__right.col-sm-4
+                .row
+                    .col-12.flex-block__mb
+                        +block('Понятие модерации понимает механизм власти').block_success.block_small.flex-block__small
+                    .col-12
+                        +block('Наши сотрудники',false,'#').block_success.block_small.flex-block__small.block_image.block_image-boat
+            .col.mb-1.flex-block__left.col-sm-8
+                +block().block_success.flex-block__big
+                    +props({
+                        'Фамилия':'Мамай',
+                        'Имя и отчество':'Станиславаленина <br> Владимировна',
+                        'Номер полиса выдан заведомо <br> ложный':'01345879',
+                        'Дата рождения':'01.12.1976',
+                        'Телефон':'+79254218069'
+                    })
+        .row
+            .col-12.col-sm-8.col-sm-8.mb-1
+                +block('Однако').block_secondary
+            .col-6.col-sm-4.mb-1.order-sm-4
+                +block('Точка перегиба').block_secondary
+            .col-6.col-sm-4.mb-1.order-sm-5
+                +block('Длина вектора').block_stranger
+            .col-6.col-sm-4.col-sm-4.mb-1.order-sm-start
+                +block('Лидерство').block_secondary
+            .col-6.col-sm-4.mb-1
+                +block('Невероятный гений').block_danger
+block footer
+    +footer

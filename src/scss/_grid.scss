@@ -1,0 +1,117 @@
+$gutters: 1rem;
+$gutter: 1rem / 2;
+$columns: 12;
+$minOrder: 0;
+$maxOrder: 9;
+
+
+@mixin order($prefix){
+    @for $i from $minOrder through $maxOrder{
+        .order#{$prefix}-start{
+            order:-1;
+        }
+        .order#{$prefix}-#{$i}{
+            order: $i;
+        }
+    }
+}
+
+@mixin display($prefix){
+    @for $i from $minOrder through $maxOrder{
+        .d#{$prefix}-none{
+            display: none;
+        }
+        .d#{$prefix}-flex{
+            display: flex;
+        }
+    }
+}
+
+@mixin columns($prefix){
+    .col#{$prefix}{
+        padding: 0 $gutter;
+        flex: 1 1 0;
+    }
+    .col#{$prefix}-auto{
+        flex: 0 1 auto;
+        padding: 0 $gutter;
+        display: flex;
+    }
+    @for $i from 1 through $columns{
+        .col#{$prefix}-#{$i}{
+            padding: 0 $gutter;
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 100% / ($columns / $i);
+            max-width: 100% / ($columns / $i);
+        }
+    }
+}
+
+.container{
+    overflow: hidden;
+    &_flex-column{
+        display: flex;
+        flex-direction: column;
+        .row{
+            flex: 0 1 auto;
+        }
+    }
+}
+.row{
+    margin: 0 $gutter*-1;
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-nowrap{
+    flex-wrap: nowrap;
+}
+
+.flex-block{
+    font-size: 3.125vw;
+    &__left{
+        flex-basis: 65.984375%;
+        max-width:  65.984375%;
+    }
+    &__right{
+        flex-basis: 34.015625%;
+        max-width:  34.015625%;
+    }
+    &__mb{
+        margin-bottom: 10px;
+    }
+    &__big{
+        height: em(210.98, 10);
+    }
+    &__small{
+        height: calc(#{em(105.5, 10)} - 5px);        
+    }
+}
+
+@include columns('');
+@include order('');
+@include display('');
+@media screen and (min-width: 480px){
+    .container{
+        max-width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+    @include order('-sm');
+    @include display('-sm');
+    @include columns('-sm');
+    .flex-block{
+        font-size: 3.0291vw;
+    }
+}
+
+@media screen and (min-width: 769px){
+    .flex-block{
+        font-size: 2.32635rem;
+        &__mb{
+            margin-bottom: .45em;
+        }
+    }
+}

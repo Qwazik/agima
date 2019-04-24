@@ -1,0 +1,48 @@
+@import "_mixins";
+
+/*-------------------------------------------------*/
+/*  colors  
+/*-------------------------------------------------*/
+$grey100: #E8EBED;
+$grey200: #C4C4C4;
+$grey300: #A2A9B7;
+$blue:    #90BCE8;
+$yellow:  #FEBF26;
+$peach:   #FFAA87;
+$purple:  #C7ABD4;
+$red:     #F55E62;
+$green:   #E3EBD3;
+$white:   #fff;
+$black:   #000;
+
+$muted100: $grey100;
+$muted200: $grey200;
+$muted300: $grey300;
+$secondary: $peach;
+$success: $green;
+$info: $blue;
+$danger: $red;
+$warning: $yellow;
+$light: $white;
+$dark: $black;
+$stranger: $purple;
+
+$theme: (
+  muted100: $muted100,
+  muted200: $muted200,
+  muted300: $muted300,
+  secondary: $secondary,
+  success: $success,
+  info: $info,
+  danger: $danger,
+  warning: $warning,
+  light: $light,
+  dark: $dark,
+  stranger: $stranger
+);
+
+/*-------------------------------------------------*/
+/*  font
+/*-------------------------------------------------*/
+$ff-primary: 'Roboto', sans-serif;
+$core-fz: 1.4rem;

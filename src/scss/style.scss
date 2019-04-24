@@ -1,0 +1,96 @@
+@import "_settings/_mixins";
+@import "_settings/_config";
+@import "_settings/_reset";
+
+/*-- START: base --*/
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: $core-fz;
+  font-family: $ff-primary;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+}
+%off-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/*-- END: base --*/
+
+/* ========================
+START: ELEMENTS
+========================*/
+
+/*-- START: page --*/
+@import '../pug/blocks/page/page';
+/*-- END: page --*/
+
+/*-- START: header --*/
+@import '../pug/blocks/header/header';
+/*-- END: header --*/
+
+/*-- START: footer --*/
+@import '../pug/blocks/footer/footer';
+/*-- END: footer --*/
+
+/*-- START: block --*/
+@import '../pug/blocks/block/block';
+/*-- END: block --*/
+
+/*-- START: props --*/
+@import '../pug/blocks/props/props';
+/*-- END: props --*/
+
+/*-- START: chat --*/
+@import '../pug/blocks/chat/chat';
+/*-- END: chat --*/
+
+/*========================
+END: ELEMENTS
+========================*/
+
+/* ========================
+START: UTILITIES
+========================*/
+
+/* обычно используем bootstrap grid 4
+но в тз требовалось без бутстрапа */
+
+/*-- START: grid --*/
+@import '_grid';
+/*-- END: grid --*/
+
+/*-- START: margins --*/
+@import '_margins';
+/*-- END: margins --*/
+
+.ovh{
+  overflow: hidden;
+}
+.off-list{
+  @extend %off-list;
+}
+
+/*========================
+END: UTILITIES
+========================*/
+
+/* ========================
+START: MEDIA
+========================*/
+
+/*========================
+END: MEDIA
+========================*/
+
+/* ========================
+START: PLUGINS
+========================*/
+
+/*========================
+END: PLUGINS
+========================*/
